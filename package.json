@@ -1,0 +1,13 @@
+
+{
+  "name": "vela-virtual",
+  "version": "1.0.0",
+  "description": "Web espiritual con velas virtuales",
+  "main": "server.js",
+  "scripts": {
+    "start": "node server.js"
+  },
+  "dependencies": {
+    "express": "^4.18.2"
+  }
+}

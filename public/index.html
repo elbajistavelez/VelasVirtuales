@@ -1,0 +1,71 @@
+
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Velas Virtuales</title>
+    <link rel="stylesheet" href="estilo.css">
+</head>
+<body>
+    <div class="contenedor">
+        <h1>🕯️ Enciende tu luz de gratitud🕯️</h1>
+        <a class="btn-mini" href="memorial.html">🖤 Ver velas en memoria</a>
+        
+ 
+        <p>Enciende una vela con tus intenciones, agradecimientos o peticiones para este nuevo 2026. Tu luz permanecerá viva durante 24 horas, iluminando esperanza y unión.</p>
+
+       <form id="formVela" class="form-vela">
+    <h2 class="form-titulo">🕯️ Encender una vela</h2>
+
+    <div class="form-grupo">
+        <label>Tu nombre <span>*</span></label>
+        <input required name="nombre" placeholder="Ej: Santiago Vélez" required maxlength="15" placeholder="Máx. 15 caracteres">
+    </div>
+
+    <div class="form-grupo">
+        <label>Encender por (homenaje)</label>
+        <input name="por" placeholder="Ej: En memoria de Ana" required maxlength="15" placeholder="Máx. 15 caracteres">
+    </div>
+
+    <div class="form-grupo">
+        <label>País <span>*</span></label>
+        <input required name="pais" placeholder="Ej: Colombia">
+    </div>
+
+    <div class="form-grupo">
+        <label>Intención / Bendición / Agradecimiento <span>*</span></label>
+        <textarea required name="mensaje" rows="4" placeholder="Escribe tu deseo con el corazón..."></textarea>
+    </div>
+
+    <div class="form-grupo">
+        <label>Email <small>(opcional)</small></label>
+        <input name="email" placeholder="correo@ejemplo.com">
+    </div>
+
+    <div class="form-grupo">
+        <label>WhatsApp <small>(opcional)</small></label>
+        <input name="whatsapp" placeholder="+57 300 1234567">
+    </div>
+
+    <button class="btn-vela">Enciende tu Vela 🕯️</button>
+</form>
+
+
+<button id="btnModo">🌗 Modo Día/Noche</button>
+<a class="btn-mini" href="memorial.html">🖤 Ver velas en memoria</a>
+
+
+
+        <h2>🔍 Buscar tus Velas</h2>
+        <input id="buscar" placeholder="Buscar por nombre o fecha...">
+
+        <h2>🕯️ Velas encendidas</h2>
+        <div id="galeria" class="galeria"></div>
+
+        <h2 id="velasencendidas">🕯️ Velas encendidas</h2>
+
+    </div>
+    <script src="app.js"></script>
+</body>
+</html>

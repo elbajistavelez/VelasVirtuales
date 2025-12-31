@@ -1,0 +1,229 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Vela Virtual</title>
+
+  <!-- usa tu mismo estilo -->
+  <link rel="stylesheet" href="estilo.css">
+
+  <style>
+    /* estilo extra para esta página */
+    .contenedor-vela {
+      max-width: 200px;
+      margin: 40px auto;
+      padding: 25px;
+      background: rgba(255,255,255,0.08);
+      border-radius: 16px;
+      backdrop-filter: blur(4px);
+      text-align: center;
+    }
+
+    .animacion-vela {
+      width: 160px;
+      margin-bottom: 20px;
+    }
+
+    .nombre-vela {
+      font-size: 28px;
+      color: gold;
+      margin-top: 10px;
+      margin-bottom: 5px;
+    }
+
+    .mensaje-vela {
+      font-size: 18px;
+      margin-top: 10px;
+      opacity: .9;
+      line-height: 1.4em;
+    }
+
+    .btn-compartir {
+      margin-top: 18px;
+      padding: 12px;
+      width: 100%;
+      background: gold;
+      color: #3b2a00;
+      font-size: 18px;
+      font-weight: bold;
+      border-radius: 10px;
+      border: none;
+      cursor: pointer;
+      transition: .3s;
+    }
+
+    .btn-compartir:hover {
+      background: #ffed9c;
+      box-shadow: 0 0 12px rgba(255, 225, 160, 0.9);
+    }
+.comentarios-box {
+  max-width: 450px;
+  margin: 20px auto;
+  padding: 20px;
+  background: rgba(255,255,255,0.08);
+  border-radius: 16px;
+  backdrop-filter: blur(4px);
+}
+
+.form-comentario input,
+.form-comentario textarea {
+  width: 100%;
+  padding: 10px;
+  margin-top: 10px;
+  border-radius: 8px;
+  border: none;
+  background: rgba(255,255,255,0.15);
+  color: white;
+}
+
+.form-comentario button {
+  width: 100%;
+  margin-top: 12px;
+  background: gold;
+  color: #3b2a00;
+  border-radius: 8px;
+  padding: 10px;
+  border: none;
+  cursor: pointer;
+  font-weight: bold;
+  font-size: 17px;
+}
+
+.comentario-item {
+  margin-top: 15px;
+  padding: 10px;
+  background: rgba(255,255,255,0.15);
+  border-radius: 10px;
+  font-size: 16px;
+}
+.comentario-meta {
+  font-size: 13px;
+  opacity: .7;
+}
+/* ====== FLEX DE DOS COLUMNAS ====== */
+.layout {
+  display: flex;
+  gap: 30px;
+  max-width: 1100px;
+  margin: 40px auto;
+  padding: 10px;
+}
+
+/* 📝 columna izquierda */
+.col-formulario {
+  width: 35%;
+  padding: 20px;
+  background: rgba(255,255,255,0.08);
+  border-radius: 16px;
+  backdrop-filter: blur(4px);
+}
+
+/* 🕯️ & 💬 columna derecha */
+.col-vela-comentarios {
+  width: 65%;
+}
+
+/* lista de comentarios */
+.comentarios-publicados {
+  margin-top: 20px;
+  padding: 15px;
+  background: rgba(255,255,255,0.08);
+  border-radius: 16px;
+  backdrop-filter: blur(4px);
+}
+
+/* comentario individual */
+.comentario-item {
+  margin-bottom: 15px;
+  padding: 10px;
+  background: rgba(255,255,255,0.15);
+  border-radius: 10px;
+}
+/* --- 3 columnas principales --- */
+.layout3 {
+  display: flex;
+  gap: 25px;
+  max-width: 1400px;
+  margin: 40px auto;
+  padding: 10px;
+}
+
+/* formulario izquierda */
+.col-form {
+  width: 30%;
+  background: rgba(255,255,255,0.08);
+  padding: 20px;
+  border-radius: 16px;
+  backdrop-filter: blur(4px);
+  min-height: 400px;
+}
+
+/* vela centro */
+.col-vela {
+  width: 35%;
+  background: rgba(255,255,255,0.08);
+  padding: 20px;
+  border-radius: 16px;
+  backdrop-filter: blur(4px);
+  min-height: 400px;
+  text-align: center;
+}
+
+/* comentarios derecha */
+.col-comments {
+  width: 35%;
+  background: rgba(255,255,255,0.08);
+  padding: 20px;
+  border-radius: 16px;
+  backdrop-filter: blur(4px);
+}
+
+/* caja individual */
+.comentario-item {
+  margin-bottom: 12px;
+  padding: 10px;
+  background: rgba(255,255,255,0.15);
+  border-radius: 10px;
+}
+
+  </style>
+</head>
+<body>
+
+  <header style="text-align:center; margin-top:20px;">
+    <h1>🕯️ Vela Virtual</h1>
+    <p>Mantén la luz encendida por 24 horas ✨</p>
+     <a class="btn-mini" href="index.html#velasencendidas">🖤 Ver velas encendidas</a>
+  </header>
+
+  <div class="layout3">
+
+    <!-- 📝 Formulario -->
+    <div class="col-form">
+      <h2>💬 Comentar</h2>
+      <form id="formComentario" class="form-comentario">
+          <input type="text" name="nombre" placeholder="Tu nombre" required>
+          <input type="text" name="pais" placeholder="País" required>
+          <textarea name="texto" placeholder="Tu mensaje aquí..." required></textarea>
+          <button type="submit">💛 Publicar</button>
+      </form>
+    </div>
+
+    <!-- 🕯️ Vela -->
+    <div class="col-vela">
+      <div id="contenedorVela" class="contenedor-vela"></div>
+    </div>
+
+    <!-- 💬 Comentarios -->
+    <div class="col-comments">
+      <h2>✨ Mensajes</h2>
+      <div id="listaComentarios" class="comentarios-publicados"></div>
+    </div>
+
+  </div>
+
+  <script src="vela.js"></script>
+</body>
+
+</html>

@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Memorial de Velas Apagadas</title>
+  <a class="btn-mini" href="index.html#velasencendidas">🖤 Ver velas encendidas</a>
+  
+
+  <link rel="stylesheet" href="estilo.css">
+  <style>
+    .grid-memorial {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(500px, 1fr));
+      gap: 20px;
+      padding: 30px;
+    }
+
+    .vela-memorial {
+      background: rgba(255,255,255,0.08);
+      padding: 18px;
+      border-radius: 16px;
+      text-align: center;
+      position: relative;
+      overflow: visible;
+      backdrop-filter: blur(4px);
+    }
+
+    .vela-memorial h3 {
+      color: gold;
+      margin-bottom: 6px;
+    }
+
+    /* imagen vela apagada */
+    .vela-apagada-img {
+      width: 130px;
+      opacity: 0.8;
+    }
+
+    /* --- HUMO ::: animación --- */
+    .humo {
+      position: absolute;
+      top: 0px;
+      left: 50%;
+      transform: translateX(-50%);
+      width: 20px;
+      height: 20px;
+      background: rgba(200,200,200,0.4);
+      border-radius: 50%;
+      filter: blur(3px);
+      animation: humoSube 3s infinite ease-in-out;
+      pointer-events: none;
+    }
+
+    .humo:nth-child(2) {
+      animation-delay: 1s;
+      opacity: .6;
+      width: 14px;
+    }
+
+    .humo:nth-child(3) {
+      animation-delay: 2s;
+      opacity: .3;
+      width: 10px;
+    }
+
+    @keyframes humoSube {
+      0% { transform: translate(-50%, 10px) scale(0.7); opacity: .6; }
+      50% { transform: translate(-50%, -20px) scale(1); opacity: .3; }
+      100% { transform: translate(-50%, -50px) scale(1.3); opacity: 0; }
+    }
+
+    /* botón para reencender */
+    .btn-reencender {
+      margin-top: 10px;
+      background: gold;
+      border: none;
+      padding: 9px;
+      width: 100%;
+      border-radius: 10px;
+      font-weight: bold;
+      cursor: pointer;
+    }
+    .btn-reencender:hover {
+      background: #ffeaa3;
+    }
+
+  </style>
+</head>
+<body>
+  <header style="text-align:center; margin-top:20px;">
+    <h1>⚫ Memorial de Velas Apagadas</h1>
+    <p>Guardamos su luz y su recuerdo ✨</p>
+  </header>
+
+  <div class="grid-memorial" id="listaMemorial"></div>
+
+  <script src="memorial.js"></script>
+</body>
+</html>
